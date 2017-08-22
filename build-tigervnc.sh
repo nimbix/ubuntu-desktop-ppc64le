@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -e
+
+cd /tmp
+
 ROOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BUILD_DIR=$PWD/tigervnc_build
 TIGERVNC_SOURCE=$PWD/tigervnc
@@ -47,4 +51,5 @@ make servertarball
 chmod 664 $BUILD_DIR/tigervnc-Linux*.tar.gz
 cp $BUILD_DIR/tigervnc-Linux*.tar.gz /root
 
+cd /tmp
 rm -rf $BUILD_DIR $TIGERVNC_SOURCE
