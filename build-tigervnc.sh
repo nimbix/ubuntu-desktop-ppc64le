@@ -46,10 +46,10 @@ cp -r /usr/lib/powerpc64le-linux-gnu/dri $BUILD_DIR/xorg.build/lib
 mkdir -p "$BUILD_DIR/xorg.build/man/man1"
 ln -s "$BUILD_DIR/xorg.build/share/man/man1/Xvnc.1" "$BUILD_DIR/xorg.build/man/man1"
 ln -s "$BUILD_DIR/xorg.build/share/man/man1/Xserver.1" "$BUILD_DIR/xorg.build/man/man1"
-make servertarball
+make install
 
-chmod 664 $BUILD_DIR/tigervnc-Linux*.tar.gz
-cp $BUILD_DIR/tigervnc-Linux*.tar.gz /root
+#chmod 664 $BUILD_DIR/tigervnc-Linux*.tar.gz
+#cp $BUILD_DIR/tigervnc-Linux*.tar.gz /root
 
 cd /tmp
 rm -rf $BUILD_DIR $TIGERVNC_SOURCE
