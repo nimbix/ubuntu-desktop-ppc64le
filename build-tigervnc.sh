@@ -47,9 +47,10 @@ mkdir -p "$BUILD_DIR/xorg.build/man/man1"
 ln -s "$BUILD_DIR/xorg.build/share/man/man1/Xvnc.1" "$BUILD_DIR/xorg.build/man/man1"
 ln -s "$BUILD_DIR/xorg.build/share/man/man1/Xserver.1" "$BUILD_DIR/xorg.build/man/man1"
 make install
+cp -f unix/xserver/hw/vnc/Xvnc /usr/bin
+strip /usr/bin/Xvnc
+chmod 555 /usr/bin/Xvnc
 
-#chmod 664 $BUILD_DIR/tigervnc-Linux*.tar.gz
-#cp $BUILD_DIR/tigervnc-Linux*.tar.gz /root
 
 cd /tmp
 rm -rf $BUILD_DIR $TIGERVNC_SOURCE
